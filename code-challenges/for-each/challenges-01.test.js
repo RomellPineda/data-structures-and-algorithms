@@ -9,11 +9,11 @@ Then, write a function named speaker that takes in a string and a callback funct
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  // Solution code here...
+  return word.toUpperCase();
 };
 
 const speaker = (message, callback) => {
-  // Solution code here...
+  return callback(message);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,11 +33,16 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  let i = 0;
+  while (i < times) {
+    callback(arr, num);
+    i++;
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,11 +58,16 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  // Solution code here...
+  if (num % 3 === 2) {
+    arr.pop();
+  }
 };
 
 const removeElements = (arr, callback) => {
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i], arr);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +77,10 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  // Solution code here...
+  arr.forEach(elem => {
+    callback(elem, arr);
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,7 +94,12 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  // Solution code here...
+  arr.forEach(elem => {
+    if (elem % 3 === 2) {
+      arr.pop();
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +120,13 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  const list = [];
+  availableItems.forEach(elem => {
+    if (elem.available) {
+      list.push(elem.name);
+    }
+  })
+  return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,7 +144,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  const out = [];
+  arr.forEach((elem, i) => {
+    if (elem % 3 === 0 && elem % 5 === 0) {
+      out.push('Fizz Buzz');
+    } else if (elem % 3 === 0) {
+      out.push('Fizz');
+    } else if (elem % 5 === 0) {
+      out.push('Buzz');
+    } else {
+      out.push(elem);
+    }
+  })
+  return out;
 };
 
 /* ------------------------------------------------------------------------------------------------
