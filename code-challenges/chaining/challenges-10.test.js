@@ -57,10 +57,10 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 const divisibleByFiveTwoToThePower = (input) => input.map(arr =>
   arr.map((elem) => {
     if (elem % 5 === 0) {
-      return Math.pow(2, elem);
-    } else {
-      return 'foo';
+      return Math.pow(2, elem)
     }
+  }).filter(elem => {
+    return elem < Infinity;
   })
 );
 
@@ -189,7 +189,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return numbers divisible by five, then raise two to the power of the resulting numbers', () => {
     expect(divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]])).toStrictEqual([[1024, 1048576, 32], [32], [1024]]);
   });
