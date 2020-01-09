@@ -8,4 +8,4 @@ Write a function called which takes an array and an integer as arguments. Withou
 Create a new array of integers. Establish the midpoint of the original array.  Insert the element of the old array into the new one up until the midpoint.  Insert the integer given as the second argument into the midpoint of the new array.  Then insert the remaining elements from the original array.
 
 ## Solution
-![whiteboard solution](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/assets/reverse-array.jpg)
+![whiteboard solution](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/assets/array-shift.jpg)
