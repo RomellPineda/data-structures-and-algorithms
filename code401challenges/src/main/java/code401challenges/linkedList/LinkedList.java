@@ -18,21 +18,14 @@ public class LinkedList {
 
     public void insert(int val) {
         Node newNode = new Node(val);
-        if (head == null) {
-            head = newNode;
-        } else {
-            Node runner = head;
-            while(runner.next != null) {
-                runner = runner.next;
-            }
-            runner.next = newNode;
-        }
+        newNode.next = head;
+        head = newNode;
     }
 
     public boolean includes(int target) {
         Node runner = head;
 
-        while (runner.next != null) {
+        while (runner != null) {
             if (runner.value == target) {
                 return true;
             } else {
@@ -52,5 +45,34 @@ public class LinkedList {
         }
         out += "NULL";
         return out;
+    }
+
+    public void append(int val) {
+        Node newNode = new Node(val);
+        Node runner = head;
+        while (runner.next != null) {
+            runner = runner.next;
+        }
+        runner.next = newNode;
+    }
+
+    public void insertBefore(int target, int val) {
+        Node newNode = new Node(val);
+        Node runner = head;
+        while (runner.next.value != target) {
+            runner = runner.next;
+        }
+        newNode.next = runner.next;
+        runner.next = newNode;
+    }
+
+    public void insertAfter(int target, int val) {
+        Node newNode = new Node(val);
+        Node runner = head;
+        while (runner.value != target) {
+            runner = runner.next;
+        }
+        newNode.next = runner.next;
+        runner.next = newNode;
     }
 }
