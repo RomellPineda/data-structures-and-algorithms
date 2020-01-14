@@ -4,27 +4,36 @@ public class LinkedList {
 
     public Node head;
 
-    public class Node {
-        public Node next;
-        public Integer val;
+    public LinkedList() {};
 
-        public Node(Integer val) {
-            this.val = val;
+    static class Node {
+        public Node next;
+        public int value;
+
+        public Node(int val) {
+            this.value = val;
             this.next = null;
         }
     }
 
-    public void insert(Integer val) {
-        Node fresh = new Node(val);
-        fresh = head;
-        head = fresh;
+    public void insert(int val) {
+        Node newNode = new Node(val);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node runner = head;
+            while(runner.next != null) {
+                runner = runner.next;
+            }
+            runner.next = newNode;
+        }
     }
 
-    public boolean includes(Integer target) {
+    public boolean includes(int target) {
         Node runner = head;
 
         while (runner.next != null) {
-            if (runner.val == target) {
+            if (runner.value == target) {
                 return true;
             } else {
                 runner = runner.next;
@@ -37,8 +46,9 @@ public class LinkedList {
         String out = "";
         Node runner = head;
 
-        while (runner.next != null) {
-            out += "{" + runner.val + "} -> ";
+        while (runner != null) {
+            out += "{" + runner.value + "} -> ";
+            runner = runner.next;
         }
         out += "NULL";
         return out;
