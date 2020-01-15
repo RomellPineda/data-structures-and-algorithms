@@ -66,4 +66,15 @@ public class LinkedListTest {
         String output = "{96} -> {97} -> {50} -> {98} -> {99} -> {100} -> NULL";
         assertEquals(output, sl.toString());
     }
+
+    @Test public void testFromLast() {
+        LinkedList sl = new LinkedList();
+        sl.insert(100);
+        sl.insert(99);
+        sl.insert(98);
+        sl.insert(97);
+        sl.insert(96);
+
+        assertEquals(97, sl.fromLast(3));
+    }
 }

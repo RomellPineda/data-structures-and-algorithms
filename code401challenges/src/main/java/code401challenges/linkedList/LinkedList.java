@@ -75,4 +75,22 @@ public class LinkedList {
         newNode.next = runner.next;
         runner.next = newNode;
     }
+
+    public int fromLast(int k) {
+        Node runner = head;
+        Node walker = head;
+        int count = 0;
+        while (runner != null) {
+            count++;
+            runner = runner.next;
+        }
+        if (k > count) {
+            throw new IndexOutOfBoundsException("value out of bounds");
+        }
+        while (count - k > 1) {
+            walker = walker.next;
+            count--;
+        }
+        return walker.value;
+    }
 }
