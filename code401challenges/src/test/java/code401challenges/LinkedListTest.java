@@ -77,4 +77,28 @@ public class LinkedListTest {
 
         assertEquals(97, sl.fromLast(3));
     }
+
+    @Test public void testMergeList() {
+        LinkedList sl = new LinkedList();
+        sl.insert(9);
+        sl.insert(7);
+        sl.insert(5);
+        sl.insert(3);
+        sl.insert(1);
+//        System.out.println(sl.toString());
+
+        LinkedList ll = new LinkedList();
+        ll.insert(10);
+        ll.insert(8);
+        ll.insert(6);
+        ll.insert(4);
+        ll.insert(2);
+//        System.out.println(ll.toString());
+
+
+        sl.mergeList(sl.head, ll.head);
+        System.out.println(sl.toString());
+        String output = "{1} -> {2} -> {3} -> {4} -> {5} -> {6} -> {7} -> {8} -> {9} -> {10} -> NULL";
+        assertEquals(output, sl.toString());
+    }
 }
