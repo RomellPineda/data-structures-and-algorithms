@@ -3,6 +3,8 @@ package code401challenges;
 import code401challenges.linkedList.LinkedList;
 import org.junit.Test;
 
+import java.util.StringJoiner;
+
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
@@ -85,7 +87,7 @@ public class LinkedListTest {
         sl.insert(5);
         sl.insert(3);
         sl.insert(1);
-//        System.out.println(sl.toString());
+        System.out.println(sl.toString());
 
         LinkedList ll = new LinkedList();
         ll.insert(10);
@@ -93,12 +95,31 @@ public class LinkedListTest {
         ll.insert(6);
         ll.insert(4);
         ll.insert(2);
-//        System.out.println(ll.toString());
+        System.out.println(ll.toString());
 
 
         sl.mergeList(sl.head, ll.head);
         System.out.println(sl.toString());
         String output = "{1} -> {2} -> {3} -> {4} -> {5} -> {6} -> {7} -> {8} -> {9} -> {10} -> NULL";
         assertEquals(output, sl.toString());
+    }
+
+    @Test public void testIncludes() {
+        LinkedList sl = new LinkedList();
+        sl.insert(9);
+        sl.insert(7);
+        sl.insert(5);
+        sl.insert(3);
+        sl.insert(1);
+
+        LinkedList ll = new LinkedList();
+        ll.insert(10);
+        ll.insert(8);
+        ll.insert(6);
+        ll.insert(4);
+        ll.insert(2);
+
+        sl.mergeList(sl.head, ll.head);
+        assertTrue(sl.includes(6));
     }
 }
