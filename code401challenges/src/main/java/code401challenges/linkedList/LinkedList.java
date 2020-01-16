@@ -93,4 +93,16 @@ public class LinkedList {
         }
         return walker.value;
     }
+
+    public void mergeList(Node h1, Node h2) {
+
+        if (h1 == null || h2 == null) {
+            return;
+        }
+
+        Node runner = h1.next;
+        h1.next = h2;
+        mergeList(h2, runner);
+    }
+
 }
