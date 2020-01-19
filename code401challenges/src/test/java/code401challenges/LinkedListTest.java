@@ -80,6 +80,21 @@ public class LinkedListTest {
         assertEquals(97, sl.fromLast(3));
     }
 
+    @Test public void testMoreFromLast() {
+        LinkedList sll = new LinkedList();
+        sll.insert(5);
+        sll.insert(4);
+        sll.insert(3);
+        sll.insert(2);
+        sll.insert(1);
+
+        assertEquals("should return kth value from last", 3, sll.fromLast(2));
+        assertNotEquals("should not return a value of 4",4, sll.fromLast(2));
+        assertNotEquals("should not return a value of 5",5, sll.fromLast(2));
+        assertNotEquals("should not return a value of 2",2, sll.fromLast(2));
+        assertNotEquals("should not return a value of 1",1, sll.fromLast(2));
+    }
+
     @Test public void testMergeList() {
         LinkedList sl = new LinkedList();
         sl.insert(9);
