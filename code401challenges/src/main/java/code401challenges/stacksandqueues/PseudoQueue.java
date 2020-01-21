@@ -12,21 +12,11 @@ public class PseudoQueue {
     public PseudoQueue() {};
 
     public void enqueue(int val) {
-        if (this.s1.isEmpty()) {
-            this.s1.push(val);
-        } else {
-            while (!this.s1.isEmpty()) {
-                this.s2.push(this.s1.pop());
-            }
-            this.s1.push(val);
-            while (!this.s2.isEmpty()) {
-                this.s1.push(this.s2.pop());
-            }
-        }
+        this.s1.push(val);
     }
 
     public int dequeue() {
-        int target;
+        int pseudoFirst;
 
         if (this.s1.isEmpty()) {
             throw new EmptyStackException();
@@ -34,11 +24,11 @@ public class PseudoQueue {
             while (!this.s1.isEmpty()) {
                 this.s2.push(this.s1.pop());
             }
-            target = this.s2.pop();
+            pseudoFirst = s2.pop();
             while (!this.s2.isEmpty()) {
                 this.s1.push(this.s2.pop());
             }
-            return target;
+            return pseudoFirst;
         }
     }
 }
