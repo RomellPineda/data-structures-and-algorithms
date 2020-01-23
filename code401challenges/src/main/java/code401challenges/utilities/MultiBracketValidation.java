@@ -15,12 +15,12 @@ public class MultiBracketValidation {
 
         String[] cut = input.split("");
         for (String chr : cut) {
-            if (mappers.containsKey(chr)) {
-                s.push(chr);
-            }
             if (!s.isEmpty() && chr.equals(mappers.get(s.peek()))) {
                 s.pop();
-            };
+            }
+            if (mappers.containsKey(chr) || chr.equals(mappers.get(chr))) {
+                s.push(chr);
+            }
         }
 
         return s.isEmpty();
