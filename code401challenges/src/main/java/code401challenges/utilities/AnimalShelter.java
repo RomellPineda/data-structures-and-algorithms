@@ -18,7 +18,7 @@ public class AnimalShelter {
         }
 
         // non-static factory method
-        public Animal noName(E animal) {
+        public static Animal noName(String animal) {
             return new Animal(animal, "tobes");
         }
     }
@@ -62,5 +62,9 @@ public class AnimalShelter {
             }
         }
         return null;
+    }
+
+    public String toString() {
+        return "new animal shelter up and running";
     }
 }
