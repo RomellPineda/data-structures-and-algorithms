@@ -10,20 +10,38 @@ import static org.junit.Assert.assertTrue;
 public class MultiBracketValidationTest {
 
     @Test
-    public void testMultiBracketValidation() {
+    public void testMultiBracketValidation1() {
         String a = "{}(){}";
-        String b = "(){}[[]]";
-        String g = "()[[Extra Characters]]";
-        String f = "{(})";
-        String x = "[({}]";
-        String y = "(](";
-
         assertTrue("should return true for valid multi-brackets", multiBracketValidation(a));
-        assertTrue("should return true for valid multi-brackets", multiBracketValidation(b));
-        assertTrue("should return true for valid multi-brackets", multiBracketValidation(g));
-        assertFalse("should return false for invalid multi-brackets", multiBracketValidation(f));
-        assertFalse("should return false for invalid multi-brackets", multiBracketValidation(x));
-        assertFalse("should return false for invalid multi-brackets", multiBracketValidation(y));
+    }
 
+    @Test
+    public void testMultiBracketValidation2() {
+        String b = "(){}[[]]";
+        assertTrue("should return true for valid multi-brackets", multiBracketValidation(b));
+    }
+
+    @Test
+    public void testMultiBracketValidation3() {
+        String g = "()[[Extra Characters]]";
+        assertTrue("should return true for valid multi-brackets", multiBracketValidation(g));
+    }
+
+    @Test
+    public void testMultiBracketValidation4() {
+        String f = "{(})";
+        assertFalse("should return false for invalid multi-brackets", multiBracketValidation(f));
+    }
+
+    @Test
+    public void testMultiBracketValidation5() {
+        String x = "[({}]";
+        assertFalse("should return false for invalid multi-brackets", multiBracketValidation(x));
+    }
+
+    @Test
+    public void testMultiBracketValidation() {
+        String y = "(](";
+        assertFalse("should return false for invalid multi-brackets", multiBracketValidation(y));
     }
 }
