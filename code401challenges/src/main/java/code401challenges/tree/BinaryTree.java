@@ -7,53 +7,53 @@ import java.util.ArrayList;
 // https://www.youtube.com/watch?v=oSWTXtMglKE&feature=youtu.be was referenced for this assignment
 // https://github.com/sergeyvoytov/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/tree/BinaryTree.java was referenced for this assignment
 
-public class BinaryTree {
-    TreeNode root;
+public class BinaryTree<E> {
+    Node<E> root;
 
     public BinaryTree() {}
 
-    public BinaryTree(TreeNode treeNode) {
-        this.root = treeNode;
+    public BinaryTree(Node<E> node) {
+        this.root = node;
     }
 
-    public ArrayList<Integer> preOrder() {
-        ArrayList<Integer> list = new ArrayList<>();
+    public ArrayList<E> preOrder() {
+        ArrayList<E> list = new ArrayList<>();
         return preOrder(this.root, list);
     }
 
-    public ArrayList<Integer> preOrder(TreeNode node, ArrayList<Integer> list) {
+    public ArrayList<E> preOrder(Node<E> node, ArrayList<E> list) {
         if (node != null) {
-            list.add(node.value);
+            list.add(node.data);
             preOrder(node.left, list);
             preOrder(node.right, list);
         }
         return list;
     }
 
-    public ArrayList<Integer> inOrder() {
-        ArrayList<Integer> list = new ArrayList<>();
+    public ArrayList<E> inOrder() {
+        ArrayList<E> list = new ArrayList<>();
         return inOrder(this.root, list);
     }
 
-    public ArrayList<Integer> inOrder(TreeNode node, ArrayList<Integer> list) {
+    public ArrayList<E> inOrder(Node<E> node, ArrayList<E> list) {
         if (node != null) {
             inOrder(node.left, list);
-            list.add(node.value);
+            list.add(node.data);
             inOrder(node.right, list);
         }
         return list;
     }
 
-    public ArrayList<Integer> postOrder() {
-        ArrayList<Integer> list = new ArrayList<>();
+    public ArrayList<E> postOrder() {
+        ArrayList<E> list = new ArrayList<>();
         return postOrder(this.root, list);
     }
 
-    public ArrayList<Integer> postOrder(TreeNode node, ArrayList<Integer> list) {
+    public ArrayList<E> postOrder(Node<E> node, ArrayList<E> list) {
         if (node != null) {
             postOrder(node.left, list);
             postOrder(node.right, list);
-            list.add(node.value);
+            list.add(node.data);
         }
         return list;
     }
