@@ -14,3 +14,4 @@ Collection of algorithms challenges for 401 Java
 - [Stacks and Queues](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/linkedList/stacksandqueues.md)
 - [pseudo-queue](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/pseudo-queue.md)
 - [multi-bracket-validation](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/multi-bracket-validation.md)
+- [breadth-first tree traversal](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/breadth-first-tree-traversal.md)
