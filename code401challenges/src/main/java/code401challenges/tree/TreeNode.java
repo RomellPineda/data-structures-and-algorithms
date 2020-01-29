@@ -1,16 +1,16 @@
 package code401challenges.tree;
 
-public class TreeNode {
-    int value;
-    TreeNode left;
-    TreeNode right;
+public class TreeNode<E> {
+    E data;
+    TreeNode<E> left;
+    TreeNode<E> right;
 
-    public TreeNode(int value) {
-        this(value, null, null);
+    public TreeNode(E data) {
+        this(data, null, null);
     }
 
-    public TreeNode(int value, TreeNode left, TreeNode right) {
-        this.value = value;
+    public TreeNode(E data, TreeNode<E> left, TreeNode<E> right) {
+        this.data = data;
         this.left = left;
         this.right = right;
     }
