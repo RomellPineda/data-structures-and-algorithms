@@ -2,10 +2,10 @@ package code401challenges.tree;
 
 import java.util.ArrayList;
 
-// Cracking the Coding Interview was referenced for this assignment
-// https://stackoverflow.com/questions/27886116/how-to-return-an-arraylist-with-an-recursive-function was referenced for this assignment
-// https://www.youtube.com/watch?v=oSWTXtMglKE&feature=youtu.be was referenced for this assignment
-// https://github.com/sergeyvoytov/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/tree/BinaryTree.java was referenced for this assignment
+// Cracking the Coding Interview was referenced
+// https://stackoverflow.com/questions/27886116/how-to-return-an-arraylist-with-an-recursive-function was referenced
+// https://www.youtube.com/watch?v=oSWTXtMglKE&feature=youtu.be was referenced
+// https://github.com/sergeyvoytov/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/tree/BinaryTree.java was referenced
 
 public class BinaryTree<E> {
     Node<E> root;
