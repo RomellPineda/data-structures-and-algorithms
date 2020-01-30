@@ -57,4 +57,16 @@ public class BinaryTree<E> {
         }
         return list;
     }
+
+    public Integer findMaximumValue() {
+        Integer max;
+        if (this.root.data != null) {
+            max = (Integer) this.root.data;
+        }
+        return findMaximumValue(Integer max);
+    }
+
+    public Integer findMaximumValue(Integer max) {
+        return max;
+    }
 }
