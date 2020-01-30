@@ -25,7 +25,7 @@ public class BinarySearchTree {
     }
 
     public boolean contains(int target) {
-        contains(this.root, target);
+        return contains(this.root, target);
     }
 
     public boolean contains(TreeNode node, int target) {
