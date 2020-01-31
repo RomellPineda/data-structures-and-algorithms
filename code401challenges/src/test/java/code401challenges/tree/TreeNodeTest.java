@@ -1,14 +1,21 @@
 package code401challenges.tree;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class TreeNodeTest {
 
+    TreeNode newTreeNode;
+
+    @Before
+    public void preTestBuild() {
+        newTreeNode = new TreeNode(8);
+    }
+
     @Test
     public void testTreeNodeInstance() {
-        TreeNode newTreeNode = new TreeNode(8);
         assertEquals("should return correct TreeNode value", 8, newTreeNode.value);
     }
 
