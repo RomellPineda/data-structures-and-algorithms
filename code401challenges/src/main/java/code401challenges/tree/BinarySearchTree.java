@@ -31,9 +31,9 @@ public class BinarySearchTree {
     public boolean contains(TreeNode node, int target) {
         if (node != null && target == node.value) {
             return true;
-        } else if (target < node.value) {
+        } else if (node != null && target < node.value) {
             contains(node.left, target);
-        } else {
+        } else if (node != null){
             contains(node.right, target);
         }
         return false;

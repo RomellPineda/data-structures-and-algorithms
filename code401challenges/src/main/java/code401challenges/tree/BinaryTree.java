@@ -2,7 +2,7 @@ package code401challenges.tree;
 
 import java.util.ArrayList;
 
-// Cracking the Coding Interview was referenced
+// Cracking the Coding Interview by Gayle Laakmann McDowell was referenced
 // https://stackoverflow.com/questions/27886116/how-to-return-an-arraylist-with-an-recursive-function was referenced
 // https://www.youtube.com/watch?v=oSWTXtMglKE&feature=youtu.be was referenced
 // https://github.com/sergeyvoytov/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/tree/BinaryTree.java was referenced
@@ -59,11 +59,11 @@ public class BinaryTree<E> {
     }
 
     public Integer findMaximumValue() {
-        Integer max;
+        Integer max = Integer.MIN_VALUE;
         if (this.root.data != null) {
             max = (Integer) this.root.data;
         }
-        return findMaximumValue(Integer max);
+        return findMaximumValue(max);
     }
 
     public Integer findMaximumValue(Integer max) {
