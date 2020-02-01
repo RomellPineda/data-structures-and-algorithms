@@ -5,8 +5,7 @@ import org.junit.Test;
 
 import java.sql.SQLOutput;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class BinarySearchTreeTest {
 
@@ -22,13 +21,25 @@ public class BinarySearchTreeTest {
         tree.add(75);
         tree.add(42);
         tree.add(99);
-        System.out.println(tree.root.value);
     }
 
     @Test
-    public void testBinaryTreeBuild() {
+    public void testBinaryTreeConstructor() {
         TreeNode x = new TreeNode(100);
         BinarySearchTree test = new BinarySearchTree(x);
-        System.out.println(test.root.value);
+        assertEquals("should return correct root value of constructed tree", 100, test.root.value);
+    }
+
+    @Test
+    public void testBinaryTreeAdd() {
+        assertEquals("should return correct leaf value of tree", 75, tree.root.right.left.value);
+        assertEquals("should return correct leaf value of tree", 42, tree.root.left.right.value);
+    }
+
+    @Test
+    public void testBinaryTreeContains() {
+        assertTrue("should return true for value contained in tree", tree.contains(42));
+        assertTrue("should return true for value contained in tree", tree.contains(99));
+        assertFalse("should return false for value not contained in tree", tree.contains(88));
     }
 }

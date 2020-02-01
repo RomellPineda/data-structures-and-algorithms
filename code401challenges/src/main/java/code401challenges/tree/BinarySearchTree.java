@@ -11,7 +11,7 @@ public class BinarySearchTree {
     }
 
     public void add(int value) {
-        root = add(this.root, value);
+        root = add(root, value);
     }
 
     public TreeNode add(TreeNode node, int value) {
@@ -26,17 +26,19 @@ public class BinarySearchTree {
     }
 
     public boolean contains(int target) {
-        return contains(this.root, target);
+        return contains(root, target);
     }
 
     public boolean contains(TreeNode node, int target) {
-        if (node != null && target == node.value) {
-            return true;
-        } else if (node != null && target < node.value) {
-            contains(node.left, target);
-        } else if (node != null){
-            contains(node.right, target);
+        if (node == null) {
+            return false;
         }
-        return false;
+        if (target == node.value) {
+            return true;
+        } else if (target < node.value) {
+            return contains(node.left, target);
+        } else {
+            return contains(node.right, target);
+        }
     }
 }
