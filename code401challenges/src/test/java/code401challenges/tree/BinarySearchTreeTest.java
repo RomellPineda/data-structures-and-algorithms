@@ -22,12 +22,13 @@ public class BinarySearchTreeTest {
         tree.add(75);
         tree.add(42);
         tree.add(99);
-        tree.add(3);
+        System.out.println(tree.root.value);
     }
 
     @Test
     public void testBinaryTreeBuild() {
-        // add method suspect
-        System.out.println(tree.contains(37));
+        TreeNode x = new TreeNode(100);
+        BinarySearchTree test = new BinarySearchTree(x);
+        System.out.println(test.root.value);
     }
 }

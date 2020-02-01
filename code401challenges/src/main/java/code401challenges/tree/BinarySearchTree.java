@@ -11,17 +11,18 @@ public class BinarySearchTree {
     }
 
     public void add(int value) {
-        add(this.root, value);
+        root = add(this.root, value);
     }
 
-    public void add(TreeNode node, int value) {
+    public TreeNode add(TreeNode node, int value) {
         if (node == null) {
-            node = new TreeNode(value);
+            return new TreeNode(value);
         } else if (value < node.value) {
-            add(node.left, value);
+            node.left = add(node.left, value);
         } else {
-            add(node.right, value);
+            node.right = add(node.right, value);
         }
+        return node;
     }
 
     public boolean contains(int target) {
