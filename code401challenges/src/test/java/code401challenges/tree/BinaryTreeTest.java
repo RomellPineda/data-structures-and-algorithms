@@ -14,6 +14,9 @@ public class BinaryTreeTest {
     Node<String> stringNode;
     Node<String> leftNode;
     Node<String> rightNode;
+    Node<String> baseLeft;
+    Node<String> baseRight;
+
 
     @Before
     public void preTestBuild() {
@@ -21,6 +24,9 @@ public class BinaryTreeTest {
         stringNode = new Node<>("frenchFry");
         leftNode = new Node<>("pineapple");
         rightNode = new Node<>("spongeBob");
+        baseLeft = new Node<>("patrick");
+        baseRight = new Node<>("squidward");
+
     }
 
     @Test
@@ -42,10 +48,12 @@ public class BinaryTreeTest {
     @Test
     public void testBinaryTreeStructure() {
         stringNode.left = leftNode;
+        leftNode.left = baseLeft;
         stringNode.right = rightNode;
+        rightNode.right = baseRight;
         tree.root = stringNode;
         assertEquals("should return correct root data", "pineapple", tree.root.left.data);
-        assertEquals("should return correct root data", "spongeBob", tree.root.right.data);
+        assertEquals("should return correct root data", "squidward", tree.root.right.right.data);
     }
 
     @Test

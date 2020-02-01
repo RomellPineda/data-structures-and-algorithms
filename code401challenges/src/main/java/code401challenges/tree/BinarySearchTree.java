@@ -11,31 +11,34 @@ public class BinarySearchTree {
     }
 
     public void add(int value) {
-        add(this.root, value);
+        root = add(root, value);
     }
 
-    public void add(TreeNode node, int value) {
+    public TreeNode add(TreeNode node, int value) {
         if (node == null) {
-            node = new TreeNode(value);
+            return new TreeNode(value);
         } else if (value < node.value) {
-            add(node.left, value);
+            node.left = add(node.left, value);
         } else {
-            add(node.right, value);
+            node.right = add(node.right, value);
         }
+        return node;
     }
 
     public boolean contains(int target) {
-        return contains(this.root, target);
+        return contains(root, target);
     }
 
     public boolean contains(TreeNode node, int target) {
-        if (node != null && target == node.value) {
-            return true;
-        } else if (node != null && target < node.value) {
-            contains(node.left, target);
-        } else if (node != null){
-            contains(node.right, target);
+        if (node == null) {
+            return false;
         }
-        return false;
+        if (target == node.value) {
+            return true;
+        } else if (target < node.value) {
+            return contains(node.left, target);
+        } else {
+            return contains(node.right, target);
+        }
     }
 }
