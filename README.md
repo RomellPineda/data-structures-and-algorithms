@@ -15,4 +15,5 @@ Collection of algorithms challenges for 401 Java
 - [pseudo-queue](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/pseudo-queue.md)
 - [multi-bracket-validation](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/multi-bracket-validation.md)
 - [tree](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/trees.md)
+- [fizzbuzz tree](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/fizzbuzz-tree.md)
 - [breadth-first tree traversal](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/breadth-first-tree-traversal.md)
