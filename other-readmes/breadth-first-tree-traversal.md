@@ -13,4 +13,4 @@ Space: O(n)
 Create queue and enqueue node data by means of tree traversal.  Return the queue.
 
 ## Solution
-![whiteboard solution](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/assets/code13.jpg)
+![whiteboard solution](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/assets/code17.jpg)
