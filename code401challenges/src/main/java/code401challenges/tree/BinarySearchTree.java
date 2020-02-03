@@ -1,5 +1,8 @@
 package code401challenges.tree;
 
+import java.util.ArrayList;
+import java.util.Queue;
+
 public class BinarySearchTree {
 
     public TreeNode root;
@@ -40,5 +43,19 @@ public class BinarySearchTree {
         } else {
             return contains(node.right, target);
         }
+    }
+
+    public ArrayList<Integer> breadthFirst() {
+        ArrayList<Integer> result = new ArrayList<>();
+        Queue<TreeNode> standby = new Queue<>();
+
+        if (this.root != null) {
+            standby.add(this.root);
+            while (!standby.isEmpty()) {
+                result.add(standby.peek());
+            }
+        }
+
+        return result;
     }
 }
