@@ -3,8 +3,6 @@ package code401challenges.tree;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.SQLOutput;
-
 import static org.junit.Assert.*;
 
 public class BinarySearchTreeTest {
