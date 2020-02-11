@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class InsertionSortTest {
+public class SortTest {
 
     int[] array;
 
@@ -27,6 +27,6 @@ public class InsertionSortTest {
     @Test
     public void testInsertionSort() {
         int[] expectedOutput = {11, 12, 23, 37, 42, 45, 56, 80, 99, 101};
-        assertEquals("should return sorted array equal to expectedOutput", expectedOutput, InsertionSort.insertionSort(array));
+        assertEquals("should return sorted array equal to expectedOutput", expectedOutput, Sort.insertionSort(array));
     }
 }
