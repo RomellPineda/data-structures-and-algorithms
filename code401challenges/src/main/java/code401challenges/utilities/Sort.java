@@ -1,9 +1,9 @@
 package code401challenges.utilities;
 
-public class InsertionSort {
+public class Sort {
 
     // https://www.geeksforgeeks.org/insertion-sort/
-    public static void insertionSort(int[] arr) {
+    public static int[] insertionSort(int[] arr) {
         int end = arr.length;
         for (int i = 1; i < end; i++) {
             int reference = arr[i];
@@ -14,7 +14,6 @@ public class InsertionSort {
             }
             arr[j + 1] = reference;
         }
+        return arr;
     }
-
-    public InsertionSort() {}
 }
