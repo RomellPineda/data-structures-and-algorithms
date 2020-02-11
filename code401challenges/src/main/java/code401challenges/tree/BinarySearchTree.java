@@ -45,17 +45,4 @@ public class BinarySearchTree {
         }
     }
 
-    public ArrayList<Integer> breadthFirst() {
-        ArrayList<Integer> result = new ArrayList<>();
-        Queue<TreeNode> standby = new Queue<>();
-
-        if (this.root != null) {
-            standby.add(this.root);
-            while (!standby.isEmpty()) {
-                result.add(standby.peek());
-            }
-        }
-
-        return result;
-    }
 }
