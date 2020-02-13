@@ -51,4 +51,21 @@ public class Sort {
         }
         return arr;
     }
+
+    public static int[] quickSort(int[] arr, int[] less, int[] greater) {
+        if (arr.length < 2) {
+            return arr;
+        }
+        int pivot = arr[0];
+
+//        for (int i = 1; i < arr.length; i++) {
+//            if (arr[i] < pivot) {
+//                less;
+//            } else {
+//                greater;
+//            }
+//        }
+//        return quickSort less concat pivot concat quickdSort greater
+        return arr;
+    }
 }
