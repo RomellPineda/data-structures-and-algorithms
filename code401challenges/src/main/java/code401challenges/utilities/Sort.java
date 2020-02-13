@@ -24,16 +24,16 @@ public class Sort {
         if (arr.size() == 1) {
             return arr;
         }
-        int mid = (int) Math.floor(arr.size() / 2.0);
+        int mid = arr.size() / 2;
         List<Integer> left = arr.subList(0, mid);
-        List<Integer> right = arr.subList(mid, arr.size() - 1);
-        return merge(left, right);
+        List<Integer> right = arr.subList(mid, arr.size());
+        return merge(mergeSort(left), mergeSort(right));
     }
 
     public static List<Integer> merge(List<Integer> left, List<Integer> right) {
         int l = 0;
         int r = 0;
-        List<Integer> arr;
+        List<Integer> arr = new ArrayList<>();
 
         while (l < left.size() && r < right.size()) {
             if (left.indexOf(l) < right.indexOf(r)) {
@@ -44,12 +44,11 @@ public class Sort {
                 r++;
             }
         }
-//        if (l == left.size()) {
-//            arr = arr.addAll(right.subList(r, right.size() - 1));
-//        } else {
-//            arr = arr.addAll(left.subList(r, left.size() - 1));
-//
-//        }
+        if (l == left.size()) {
+            arr.addAll(right.subList(r, right.size()));
+        } else {
+            arr.addAll(left.subList(r, left.size()));
+        }
         return arr;
     }
 }

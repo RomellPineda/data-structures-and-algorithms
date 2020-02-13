@@ -3,6 +3,9 @@ package code401challenges.utilities;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class SortTest {
@@ -47,5 +50,25 @@ public class SortTest {
     public void testInsertionSortNegatives() {
         int[] expectedOutput = {-100, -99, -83, -62, -56, -54, -12, -10, -7, -5};
         assertArrayEquals("should return sorted array of negative values", expectedOutput, Sort.insertionSort(negatives));
+    }
+
+    @Test
+    public void testMerge() {
+        List<Integer> left = new ArrayList<>();
+        List<Integer> right = new ArrayList<>();
+        left.add(100);
+        left.add(99);
+        left.add(98);
+        left.add(98);
+        right.add(97);
+        right.add(96);
+        right.add(95);
+        right.add(95);
+
+//        System.out.println(Sort.merge(left, right));
+        System.out.println(left);
+        System.out.println(Sort.mergeSort(left));
+        System.out.println(left);
+
     }
 }
