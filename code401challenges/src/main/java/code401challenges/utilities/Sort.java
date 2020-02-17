@@ -20,37 +20,48 @@ public class Sort {
         return arr;
     }
 
-    public static List<Integer> mergeSort(List<Integer> arr) {
-        if (arr.size() == 1) {
-            return arr;
-        }
-        int mid = arr.size() / 2;
-        List<Integer> left = arr.subList(0, mid);
-        List<Integer> right = arr.subList(mid, arr.size());
-        return merge(mergeSort(left), mergeSort(right));
+    // Cracking the Coding Interview - Gayle Laakman McDowell
+    public static void mergeSort(int[] arr) {
+        int[] magazine = new int[arr.length];
+        mergeSort(arr, magazine, 0, arr.length - 1);
     }
 
-    public static List<Integer> merge(List<Integer> left, List<Integer> right) {
-        int l = 0;
-        int r = 0;
-        List<Integer> arr = new ArrayList<>();
+    public static void mergeSort(int[] arr, int[] mag, int low, int high) {
+        if (low < high) {
+            int mid = (low + high) / 2;
+            mergeSort(arr, mag, low, mid);
+            mergeSort(arr, mag, mid + 1, high);
+            merge(arr, mag, low, mid, high);
+        }
+    }
 
-        while (l < left.size() && r < right.size()) {
-            if (left.indexOf(l) < right.indexOf(r)) {
-                arr.add(left.indexOf(l));
-                l++;
+    public static void merge(int[] arr, int[] mag, int low, int mid, int high) {
+        for (int i = low; i <= high; i++) {
+            mag[i] = arr[i];
+        }
+
+        int left = low;
+        int right = mid + 1;
+        int current = low;
+
+        while (left <= mid && right <= high) {
+            if (mag[left] <= mag[right]) {
+                arr[current] = mag[left];
+                left++;
             } else {
-                arr.add(right.indexOf(r));
-                r++;
+                arr[current] = mag[right];
+                right++;
             }
+            current++;
         }
-        if (l == left.size()) {
-            arr.addAll(right.subList(r, right.size()));
-        } else {
-            arr.addAll(left.subList(r, left.size()));
+
+        int loadOut = mid - left;
+        for (int i = 0; i <= loadOut; i++) {
+            arr[current + i] = mag[left + i];
         }
-        return arr;
     }
+
+
 
     public static int[] quickSort(int[] arr, int[] less, int[] greater) {
         if (arr.length < 2) {
