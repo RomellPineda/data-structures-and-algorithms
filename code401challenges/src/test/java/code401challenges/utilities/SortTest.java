@@ -3,9 +3,13 @@ package code401challenges.utilities;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import static code401challenges.utilities.Sort.merge;
+import static code401challenges.utilities.Sort.mergeSort;
 import static org.junit.Assert.*;
 
 public class SortTest {
@@ -54,21 +58,17 @@ public class SortTest {
 
     @Test
     public void testMerge() {
-        List<Integer> left = new ArrayList<>();
-        List<Integer> right = new ArrayList<>();
-        left.add(100);
-        left.add(99);
-        left.add(98);
-        left.add(98);
-        right.add(97);
-        right.add(96);
-        right.add(95);
-        right.add(95);
+        int[] test = {5, 42, 11};
+        int[] magazine = new int[test.length];
+        merge(test, magazine, 0, 1, 2);
+        int[] expected = {5, 11, 42};
+        assertArrayEquals("should return merged test array", expected, test);
+    }
 
-//        System.out.println(Sort.merge(left, right));
-        System.out.println(left);
-        System.out.println(Sort.mergeSort(left));
-        System.out.println(left);
-
+    @Test
+    public void testMergeSort() {
+        mergeSort(array);
+        int[] expected = {11, 12, 23, 37, 42, 45, 56, 80, 99, 101};
+        assertArrayEquals("should return sorted array", expected, array);
     }
 }
