@@ -17,4 +17,4 @@ Collection of algorithms challenges for 401 Java
 - [tree](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/trees.md)
 - [fizzbuzz tree](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/fizzbuzz-tree.md)
 - [breadth-first tree traversal](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/breadth-first-tree-traversal.md)
-- [insertion sort](https://github.com/RomellPineda/data-structures-and-algorithms/BLOG.md)
+- [sorting algorithms](https://github.com/RomellPineda/data-structures-and-algorithms/BLOG.md)
