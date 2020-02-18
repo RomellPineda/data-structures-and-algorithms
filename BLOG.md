@@ -25,3 +25,14 @@ The Big O time complexity for merge sort is O(n log(n)).  Space complexity is O(
 
 *Walk Through*
 >![merge sort](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/assets/code27.jpg)
+
+### Quick Sort
+
+[link to code](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/code401challenges/src/main/java/code401challenges/utilities/Sort.java)
+
+[link to tests](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/code401challenges/src/test/java/code401challenges/utilities/SortTest.java)
+
+Unlike Merge Sort, Quick Sort does not take up O(n) space complexity.  However, in the worst-case scenario Quick Sort can take O(n^2) runtime.  Despite this, Quick Sort is a popular recursive solution for sorting.
+
+*Walk Through*
+>![merge sort](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/assets/code28.jpg)

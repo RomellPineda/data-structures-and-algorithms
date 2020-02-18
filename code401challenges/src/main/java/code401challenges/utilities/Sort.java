@@ -61,22 +61,38 @@ public class Sort {
         }
     }
 
-
-
-    public static int[] quickSort(int[] arr, int[] less, int[] greater) {
-        if (arr.length < 2) {
-            return arr;
+    // Cracking the Coding Interview - Gayle Laakman McDowell
+    public static void quickSort(int[] arr, int left, int right) {
+        int index = partition(arr, left, right);
+        if (left < index - 1) {
+            quickSort(arr, left, index - 1);
         }
-        int pivot = arr[0];
+        if (index < right) {
+            quickSort(arr, index, right);
+        }
+    }
 
-//        for (int i = 1; i < arr.length; i++) {
-//            if (arr[i] < pivot) {
-//                less;
-//            } else {
-//                greater;
-//            }
-//        }
-//        return quickSort less concat pivot concat quickdSort greater
-        return arr;
+    public static int partition(int[] arr, int left, int right) {
+        int pivot = arr[(left + right) / 2];
+        while (left <= right) {
+            while (arr[left] < pivot) {
+                left++;
+            }
+            while (arr[right] > pivot) {
+                right--;
+            }
+            if (left <= right) {
+                switcheroo(arr, left, right);
+                left++;
+                right--;
+            }
+        }
+        return left;
+    }
+
+    public static void switcheroo(int[] arr, int left, int right) {
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
     }
 }
