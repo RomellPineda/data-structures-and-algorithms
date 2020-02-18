@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static code401challenges.utilities.Sort.merge;
-import static code401challenges.utilities.Sort.mergeSort;
+import static code401challenges.utilities.Sort.*;
 import static org.junit.Assert.*;
 
 public class SortTest {
@@ -70,5 +69,22 @@ public class SortTest {
         mergeSort(array);
         int[] expected = {11, 12, 23, 37, 42, 45, 56, 80, 99, 101};
         assertArrayEquals("should return sorted array", expected, array);
+    }
+
+    @Test
+    public void testSwitcheroo() {
+        int[] testArray = {1, 2, 3};
+        switcheroo(testArray, 0, 2);
+        int[] expected = {3, 2, 1};
+        assertArrayEquals("should swap array elements at given indices", expected, testArray);
+    }
+
+    @Test
+    public void testQuickSort() {
+        int[] unsorted = {101, 37, 80, 56, 23, 12, 99, 45, 42, 11};
+        assertArrayEquals("should return unsorted array", unsorted, array);
+        int[] expected = {11, 12, 23, 37, 42, 45, 56, 80, 99, 101};
+        quickSort(array, 0, 9);
+        assertArrayEquals("should return sorted array after calling quickSort on array", expected, array);
     }
 }
