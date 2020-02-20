@@ -22,7 +22,7 @@ public class Hashtable<K, V> {
 
     private int getBucketzIndex(K key) {
         int smashCode = key.hashCode();
-        return smashCode % yumBucketz;
+        return Math.abs(smashCode % yumBucketz);
     }
 
     public void add(K key, V value) {
@@ -35,6 +35,28 @@ public class Hashtable<K, V> {
                 return;
             }
             head = head.next;
+        }
+
+        size++;
+        head = bucketz.get(bucketzIndex);
+        Banana<K, V> freshNode =  new Banana<>(key, value);
+        freshNode.next = head;
+        bucketz.set(bucketzIndex, freshNode);
+
+        if ((1.0 * size)/yumBucketz >= 0.7) {
+            ArrayList<Banana<K, V>> temp = bucketz;
+            bucketz =  new ArrayList<>();
+            yumBucketz = 2 * yumBucketz;
+            size = 0;
+            for (int i = 0; i < yumBucketz; i++) {
+                bucketz.add(null);
+            }
+            for (Banana<K, V> headNode : temp) {
+                while (headNode != null) {
+                    add(headNode.key, headNode.value);
+                    headNode = headNode.next;
+                }
+            }
         }
     }
 
