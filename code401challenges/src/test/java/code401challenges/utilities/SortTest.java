@@ -87,4 +87,28 @@ public class SortTest {
         quickSort(array, 0, 9);
         assertArrayEquals("should return sorted array after calling quickSort on array", expected, array);
     }
+
+    @Test
+    public void testQuickSortReverseSortedArray() {
+        int[] revSorted = {20, 18, 12, 8, 5, -2};
+        int[] expected = {-2, 5, 8, 12, 18, 20};
+        quickSort(revSorted, 0, revSorted.length - 1);
+        assertArrayEquals("should return sorted array after calling quickSort on reverse sorted array", expected, revSorted);
+    }
+
+    @Test
+    public void testQuickSortFewUniques() {
+        int[] fewUniques = {5, 12, 7, 5, 5, 7};
+        int[] expected = {5, 5, 5, 7, 7, 12};
+        quickSort(fewUniques, 0, fewUniques.length - 1);
+        assertArrayEquals("should return sorted array after calling quickSort on reverse sorted array", expected, fewUniques);
+    }
+
+    @Test
+    public void testQuickSortNearlySorted() {
+        int[] nearlySorted = {2, 3, 5, 7, 13, 11};
+        int[] expected = {2, 3, 5, 7, 11, 13};
+        quickSort(nearlySorted, 0, nearlySorted.length - 1);
+        assertArrayEquals("should return sorted array after calling quickSort on reverse sorted array", expected, nearlySorted);
+    }
 }
