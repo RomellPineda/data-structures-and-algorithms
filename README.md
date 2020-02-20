@@ -19,3 +19,4 @@ Collection of algorithms challenges for 401 Java
 - [breadth-first tree traversal](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/breadth-first-tree-traversal.md)
 - [sorting algorithms](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/BLOG.md)
 - [repeat words](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/repeat-words.md)
+- [tree repeats](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/tree-repeats.md)
