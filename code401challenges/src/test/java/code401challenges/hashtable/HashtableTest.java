@@ -9,6 +9,7 @@ public class HashtableTest {
     @Test
     public void testHashtable() {
         Hashtable<String, Integer> smashTable = new Hashtable<>();
-        smashTable.add("pancake", 100);
+        smashTable.add("pancake", 42);
+        System.out.println(smashTable.get("pancake"));
     }
 }
