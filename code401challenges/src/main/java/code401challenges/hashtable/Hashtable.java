@@ -72,5 +72,10 @@ public class Hashtable<K, V> {
         }
         return null;
     }
+
+    public boolean contains(String key) {
+        int codedKey = Math.abs(key.hashCode() % yumBucketz);
+        return bucketz.get(codedKey) != null;
+    }
 }
 
