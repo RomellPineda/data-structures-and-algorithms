@@ -1,7 +1,5 @@
 package code401challenges.graph;
 
-import org.checkerframework.checker.units.qual.K;
-
 import java.util.*;
 
 // https://www.geeksforgeeks.org/implementing-generic-graph-in-java/
@@ -35,5 +33,13 @@ public class Graph<T> {
 
     public String getAdjacent(T vertex) {
         return String.valueOf(this.map.get(vertex));
+    }
+
+    // https://www.youtube.com/watch?v=3L4YrGaR8E4
+    public List<T> breadthFirstTraversal() {
+        List<T> yield = new ArrayList<>();
+        HashSet<T> visited = new HashSet<>();
+        List<T> nextToVisit = new LinkedList<>();
+        return yield;
     }
 }
