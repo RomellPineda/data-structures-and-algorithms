@@ -1,9 +1,8 @@
 package code401challenges.graph;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import org.checkerframework.checker.units.qual.K;
+
+import java.util.*;
 
 // https://www.geeksforgeeks.org/implementing-generic-graph-in-java/
 public class Graph<T> {
@@ -30,4 +29,11 @@ public class Graph<T> {
         return map.keySet().size();
     }
 
+    public String getVertices() {
+        return String.valueOf(this.map);
+    }
+
+    public String getAdjacent(T vertex) {
+        return String.valueOf(this.map.get(vertex));
+    }
 }
