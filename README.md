@@ -22,3 +22,5 @@ Collection of algorithms challenges for 401 Java
 - [Repeat Words](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/repeat-words.md)
 - [Tree Repeats](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/tree-repeats.md)
 - [Graph](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/graph.md)
+- [Breadth First Search](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/graph.md)
+- [Depth First Search](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/other-readmes/graph.md)

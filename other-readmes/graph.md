@@ -14,6 +14,10 @@ Utilized Java HashMap class to store node types as keys and neighbors as an arra
 - Utilized getAdjacent method signature in place of getNeighbors, returns the associated vertices of a specified vertex.
 - size returns the amount of vertices.
 - breadthFirstTraversal takes in a single vertex and traverses through the adjacent vertices in breadth first order returning a collection of vertices.
+- depthFirstTraversal takes in graph root and traverses through the adjacent vertices in depth first order returning a collection of vertices.
 
 ## Breadth First Solution
 ![breadthFirstTraversal](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/assets/code36.jpg)
+
+## Depth First Solution
+![depthFirstTraversal](https://github.com/RomellPineda/data-structures-and-algorithms/blob/master/assets/code38.jpg)
