@@ -94,4 +94,30 @@ public class GraphTest {
         expectedOutput.add("naboo");
         assertEquals("should return list of adjacent vertices in breadth first order", expectedOutput, graph.breadthFirstTraversal("pandora"));
     }
+
+    @Test
+    public void testGraphDepthFirstTraversal() {
+        Graph<String> graph = new Graph<>();
+        graph.addVertex("A");
+        graph.addEdge("A", "D", false);
+        graph.addEdge("A", "B", true);
+        graph.addEdge("B", "D", false);
+        graph.addEdge("B", "C", false);
+        graph.addEdge("D", "F", false);
+        graph.addEdge("D", "H", false);
+        graph.addEdge("H", "F", false);
+        graph.addEdge("D", "E", false);
+        graph.addEdge("C", "G", false);
+
+        List<String> expectedOutput = new ArrayList<>();
+        expectedOutput.add("A");
+        expectedOutput.add("B");
+        expectedOutput.add("C");
+        expectedOutput.add("G");
+        expectedOutput.add("D");
+        expectedOutput.add("E");
+        expectedOutput.add("H");
+        expectedOutput.add("F");
+        assertEquals("should return list of adjacent vertices in breadth first order", expectedOutput, graph.depthFirstTraversal("A"));
+    }
 }

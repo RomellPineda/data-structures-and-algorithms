@@ -59,4 +59,24 @@ public class Graph<T> {
         }
         return yield;
     }
+
+    public List<T> depthFirstTraversal(T vertex) {
+        List<T> yield = new ArrayList<>();
+        HashSet<T> visited = new HashSet<>();
+        LinkedList<T> queue = new LinkedList<>();
+        queue.add(vertex);
+        visited.add(vertex);
+        while (!queue.isEmpty()) {
+            T current = queue.removeFirst();
+            yield.add(current);
+            for (T adjacent : this.getAdjacent(current)) {
+                if (!visited.contains(adjacent)) {
+                    visited.add(adjacent);
+                    queue.addFirst(adjacent);
+                }
+
+            }
+        }
+        return yield;
+    }
 }
