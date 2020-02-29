@@ -3,6 +3,10 @@ package code401challenges.graph;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class GraphTest {
@@ -52,7 +56,9 @@ public class GraphTest {
         graphBuild.addEdge("scott", "logan", false);
         graphBuild.addEdge("logan", "jean", true);
         graphBuild.addEdge("raven", "logan", false);
-        String expectedOutput = "[hank, jean]";
+        List<String> expectedOutput = new ArrayList<>();
+        expectedOutput.add("hank");
+        expectedOutput.add("jean");
         assertEquals("should return string of all graph vertices and related edges", expectedOutput, graphBuild.getAdjacent("logan"));
     }
 
@@ -65,5 +71,27 @@ public class GraphTest {
         graphBuild.addVertex(75);
         String expectedOutput = "{0=[], 99=[], 42=[], 75=[]}";
         assertEquals("should return string of all graph vertices", expectedOutput, graphBuild.getVertices());
+    }
+
+    @Test
+    public void testGraphBreadthFirstTraversal() {
+        Graph<String> graph = new Graph<>();
+        graph.addVertex("pandora");
+        graph.addEdge("pandora", "arendelle", true);
+        graph.addEdge("arendelle", "metroville", false);
+        graph.addEdge("arendelle", "monstropolis", false);
+        graph.addEdge("metroville", "monstropolis", false);
+        graph.addEdge("metroville", "narnia", false);
+        graph.addEdge("metroville", "naboo", false);
+        graph.addEdge("narnia", "naboo", false);
+        graph.addEdge("metropolis", "naboo", false);
+        List<String> expectedOutput = new ArrayList<>();
+        expectedOutput.add("pandora");
+        expectedOutput.add("arendelle");
+        expectedOutput.add("metroville");
+        expectedOutput.add("monstropolis");
+        expectedOutput.add("narnia");
+        expectedOutput.add("naboo");
+        assertEquals("should return list of adjacent vertices in breadth first order", expectedOutput, graph.breadthFirstTraversal("pandora"));
     }
 }
